@@ -31,7 +31,7 @@ jobs:
                     user: 'ssh user name : rrd'
                     host: 'ssh server name : server.com'
                     port: 'ssh port : 22'
-                    path: 'path on server to deploy : ./web'
+                    path: 'path on server to deploy : ../../web/'
                     owner: 'username on server who is the owner : web1'
                 env:
                     DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
