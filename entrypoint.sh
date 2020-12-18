@@ -40,6 +40,7 @@ rsync --progress -azh \
 	--exclude='logs/' \
 	--exclude='tmp/' \
 	--exclude='vendor/' \
+	./ \
 	-e "ssh -i /root/.ssh/id_rsa" \
 	$SSH_USER@$SSH_HOST:$PATH_SOURCE
 
