@@ -43,6 +43,8 @@ rsync --progress -azh \
 	-e "ssh -i /root/.ssh/id_rsa" \
 	$SSH_USER@$SSH_HOST:$PATH_SOURCE
 
+ssh -i /root/.ssh/id_rsa -t $SSH_USER@$SSH_HOST "ls -al $PATH_SOURCE"
+
 if [ $? -eq 0 ]
 then
 	echo $'\n' "------ SYNC SUCCESSFUL! -----------------------" $'\n'
