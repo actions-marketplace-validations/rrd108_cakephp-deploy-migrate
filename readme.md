@@ -1,24 +1,17 @@
-<div align="center">
-
-# Laravel Deploy and Migrate DB
-
-[![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://kosrat.dev)
-
-</div>
-
+# CakePHP Deploy and Migration
 
 ## Config example:
 
 ```
-name: Build and Deploy
+name: CakePHP Deploy and Migration
 on:
-    push:
-        branches:
-            -   master
+    create:
+        tags:
+            - "*"
 
 jobs:
     build:
-        name: Build and Deploy
+        name: CakePHP Deploy and Migration
         runs-on: ubuntu-latest
         steps:
             -   name: Checkout Repository
@@ -27,12 +20,13 @@ jobs:
                 uses: shivammathur/setup-php@v2
                 with:
                     php-version: '7.4'
+                    extensions: intl, mbstring, simplexml, pdo
             -   name: Speed up the packages installation process
                 run: composer global require hirak/prestissimo
             -   name: Install Packages
                 run: composer install --no-dev
             -   name: Deploy to Server
-                uses: kosratdev/laravel-deploy-migrate@laravel
+                uses: rrd108/cakephp-deploy-migrate@cakephp
                 with:
                     user: user
                     host: host

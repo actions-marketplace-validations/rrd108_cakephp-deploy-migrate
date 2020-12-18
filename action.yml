@@ -1,25 +1,22 @@
-name: 'Laravel Deploy and Migrate DB'
+name: 'CakePHP Deploy'
 
-description: 'Deploy Laravel Application to Server via SSH by RSync and then run php artisan migrate.'
-author: 'Kosrat Ahmed'
-branding:
-    icon: 'send'
-    color: 'green'
+description: 'Deploy CakePHP Application to Server via SSH by RSync'
+author: 'rrd'
 
 inputs:
-    user: 
+    user:
         description: 'Deploy user'
         required: true
-    host: 
+    host:
         description: 'Deploy host'
         required: true
-    port: 
+    port:
         description: 'Deploy port'
         required: false
-    path: 
+    path:
         description: 'Path source on server'
         required: true
-    owner: 
+    owner:
         description: 'Deploy owner'
         required: true
 
@@ -32,3 +29,6 @@ runs:
         -   ${{ inputs.port }}
         -   ${{ inputs.path }}
         -   ${{ inputs.owner }}
+branding:
+    icon: 'upload-cloud'
+    color: 'purple'
