@@ -21,12 +21,10 @@ jobs:
                 with:
                     php-version: '7.4'
                     extensions: intl, mbstring, simplexml, pdo
-            -   name: Speed up the packages installation process
-                run: composer global require hirak/prestissimo
             -   name: Install Packages in the temporary container
                 run: composer install --no-dev
             -   name: Deploy to Server
-                uses: rrd108/cakephp-deploy-migrate@cakephp
+                uses: rrd108/cakephp-deploy-migrate@master
                 with:
                     user: 'ssh user name : rrd'
                     host: 'ssh server name : server.com'
